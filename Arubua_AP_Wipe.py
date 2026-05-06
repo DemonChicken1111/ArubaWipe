@@ -5,6 +5,7 @@ import re
 import csv
 import threading
 import os
+import sys
 import shutil
 from datetime import datetime
 from enum import Enum
@@ -269,7 +270,10 @@ def main():
     # Check Ports
     available_ports = [p.device for p in serial.tools.list_ports.comports()]
     active_threads = []
-    num_AP = int(input("Enter the number of AP's to wipe: "))
+    num_AP = int(input("Enter the number of AP batches to wipe (0 quits the program): "))
+
+    if num_AP == 0:
+        sys.exit(0)
 
     for i in range(0,num_AP):
 
