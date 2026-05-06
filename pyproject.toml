@@ -1,0 +1,7 @@
+[project]
+name = "arubua_ap_wipe"
+version = "4.0"
+dependencies = [
+  "colorama",
+  "pyserial"
+]
